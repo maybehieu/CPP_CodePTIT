@@ -14,17 +14,22 @@ int main()
         int n, x;
         cin >> n >> x;
         int arr[n];
-        long long sum = 0;
-        for (int i = 0; i < n; i++)
+        for (int i = n - 1; i >= 0; i--)
         {
             cin >> arr[i];
-            long long temp = x;
-            for (int j = 0; j < n - 1 - i; j++)
-            {
-                temp = ((temp % mod) * (temp % mod)) % mod;
-            }
-            sum += ((arr[i] % mod) * (temp % mod)) % mod;
         }
+        long long sum = 0, temp = 1;
+        for (int i = 0; i < n; i++)
+        {
+            if (i != 0)
+            {
+                temp *= x;
+            }
+            temp %= mod;
+            sum += temp * arr[i];
+            sum %= mod;
+        }
+        cout << sum << endl;
     }
 
     return 0;
