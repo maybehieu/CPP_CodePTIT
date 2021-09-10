@@ -1,44 +1,17 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::endl;
+
 int main()
 {
     int n;
-    cin >> n;
-    cin.ignore();
-    map<string, int> MAP;
-    map<string, int>::iterator item;
-    while (n--)
+    double sum = 0;
+    for (int i = 1, j = 2; i <= n, j <= n + 1; i++, j++)
     {
-        string input;
-        getline(cin, input);
-        stringstream ss;
-        ss << input;
-        vector<string> list;
-        string token;
-        while (ss >> token)
-        {
-            for (int i = 0; i < token.size(); i++)
-            {
-                token[i] = towlower(token[i]);
-            }
-            list.push_back(token);
-        }
-        string output;
-        output += list[list.size() - 1];
-        for (int i = 0; i <= list.size() - 2; i++)
-        {
-            output += list[i][0];
-        }
-        item = MAP.find(output);
-        if (item != MAP.end())
-        {
-            cout << output << ++MAP[output] << "@ptit.edu.vn";
-        }
-        else
-        {
-            MAP[output] = 1;
-            cout << output << "@ptit.edu.vn";
-        }
-        cout << endl;
+        sum += 1.0 / (i + j);
     }
+
+    return 0;
 }
