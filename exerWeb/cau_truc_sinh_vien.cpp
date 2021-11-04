@@ -34,14 +34,14 @@ void check(struct SinhVien &a)
         }
     }
 }
-void nhap(struct SinhVien &a)
+void nhapThongTinSV(struct SinhVien &a)
 {
     getline(cin, a.name);
     cin >> a.curClass >> a.dateOB >> a.gpa;
-    a.studentCode = "B20DCCN001";
+    a.studentCode = "N20DCCN001";
     check(a);
 }
-void in(struct SinhVien a)
+void inThongTinSV(struct SinhVien a)
 {
     cout << a.studentCode << " " << a.name << " " << a.curClass << " " << a.dateOB << " ";
     cout << std::fixed << std::setprecision(2);
@@ -50,7 +50,7 @@ void in(struct SinhVien a)
 int main()
 {
     struct SinhVien a;
-    nhap(a);
-    in(a);
+    nhapThongTinSV(a);
+    inThongTinSV(a);
     return 0;
 }
