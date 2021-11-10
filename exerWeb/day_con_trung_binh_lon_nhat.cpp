@@ -1,19 +1,22 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::endl;
 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    int test;
+    cin >> test;
+    while (test--)
     {
         int n, k;
         cin >> n >> k;
-        long long a[n + 5];
+        long long arr[n + 5] = {};
         long long b;
         for (int i = 0; i < n; i++)
         {
-            cin >> a[i];
+            cin >> arr[i];
         }
         long long max = -1e9;
         int c;
@@ -22,7 +25,7 @@ int main()
             b = 0;
             for (int j = i; j < i + k; j++)
             {
-                b += a[j];
+                b += arr[j];
             }
             if (b > max)
             {
@@ -32,8 +35,10 @@ int main()
         }
         for (int i = c; i < c + k; i++)
         {
-            cout << a[i] << " ";
+            cout << arr[i] << " ";
         }
         cout << endl;
     }
+
+    return 0;
 }
