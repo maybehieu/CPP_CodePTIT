@@ -1,39 +1,32 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
     int t;
-    cin >> t;
+    scanf("%d\n", &t);
     while (t--)
     {
-        int n, k;
-        cin >> n >> k;
-        long long a[n + 5];
-        long long b;
-        for (int i = 0; i < n; i++)
+        char s[5005] = {};
+        scanf("%s", &s);
+        int check = 1;
+        for (int i = 0; i <= (strlen(s) - 1) / 2; i++)
         {
-            cin >> a[i];
-        }
-        long long max = -1e9;
-        int c;
-        for (int i = 0; i <= n - k; i++)
-        {
-            b = 0;
-            for (int j = i; j < i + k; j++)
+            if (s[i] != s[strlen(s) - i - 1])
             {
-                b += a[j];
-            }
-            if (b > max)
-            {
-                max = b;
-                c = i;
+                check = 0;
+                break;
             }
         }
-        for (int i = c; i < c + k; i++)
+        if (check)
         {
-            cout << a[i] << " ";
+            printf("YES\n");
         }
-        cout << endl;
+        else
+        {
+            printf("NO\n");
+        }
     }
+
+    return 0;
 }
