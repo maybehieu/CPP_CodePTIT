@@ -24,6 +24,21 @@ long long COUNT(string s, int n)
     }
     return count;
 }
+int chiaHet(string s, int k)
+{
+    int dem = 0;
+    int t = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        t = t * 10 + s[i] - '0';
+        t = t % k;
+    }
+    if (!t)
+    {
+        return 1;
+    }
+    return 0;
+}
 int main()
 {
     int test;

@@ -11,13 +11,13 @@ int main()
     cin >> test;
     while (test--)
     {
-        long long a, x, y;
-        cin >> a >> x >> y;
-        for (int i = 0; i < std::__gcd(x, y); i++)
+        int n, x;
+        cin >> n >> x;
+        int arr[n] = {};
+        for (int i = 0; i < n; i++)
         {
-            cout << a;
+            cin >> arr[i];
         }
-        cout << endl;
     }
 
     return 0;

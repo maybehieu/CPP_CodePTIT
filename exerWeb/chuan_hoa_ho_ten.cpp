@@ -15,13 +15,17 @@ int main()
     std::stringstream ss(s);
     std::string p;
     while (ss >> p)
+    {
         a.push_back(p);
+    }
     for (int i = 0; i < a.size(); i++)
     {
         for (int j = 0; j < a[i].size(); j++)
         {
             if (a[i][j] <= 'Z' && a[i][j] >= 'A')
+            {
                 a[i][j] += 32;
+            }
         }
     }
     for (int i = 0; i < a.size() - 1; i++)
@@ -31,9 +35,13 @@ int main()
     for (int i = 0; i < a.size() - 1; i++)
     {
         if (i == a.size() - 2)
+        {
             cout << a[i];
+        }
         else
+        {
             cout << a[i] << " ";
+        }
     }
     for (int i = 0; i < a[a.size() - 1].size(); i++)
     {
